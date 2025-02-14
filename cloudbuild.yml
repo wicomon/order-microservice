@@ -9,16 +9,6 @@ steps:
     - |
       docker build -t southamerica-east1-docker.pkg.dev/microservicios-450921/image-registry/orders-ms -f dockerfile.prod --platform=linux/amd64 --build-arg ORDERS_DATABASE_URL=$$DATABASE_URL .
     secretEnv: ['DATABASE_URL']
-    # args:
-    #   [
-    #     "build",
-    #     "-t",
-    #     "southamerica-east1-docker.pkg.dev/microservicios-450921/image-registry/orders-ms",
-    #     "-f",
-    #     "dockerfile.prod",
-    #     "--platform=linux/amd64",
-    #     ".",
-    #   ]
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
